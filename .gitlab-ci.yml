@@ -1,0 +1,13 @@
+stages:
+  - build-pages
+
+
+
+pages:
+  stage: build-pages
+  only:
+    - master
+  tags:
+    - roc
+  script:
+    - bash .ci-runner.sh
