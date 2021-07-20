@@ -1,10 +1,13 @@
 #!/usr/bin/env bash
+# sh -c "$(curl -fsSL https://raw.githubusercontent.com/yowlings/rocdocs/master/scripts/reinstall_ubuntu1804.sh)"
+# export ALL_PROXY="socks5://127.0.0.1:1086"
 # install must-install softwares
 sudo apt install curl zsh vim ssh htop git tmux tree terminator -y
 sudo apt install libgflags-dev libgoogle-glog-dev -y
 
 # install oh-my-zsh, may be failed
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 echo "ZSH_THEME='af-magic'" >> ~/.zshrc
 echo "
 # User configuration
@@ -22,7 +25,13 @@ alias gl='git log'
 ## tar 
 alias tx='tar -xzvf'
 alias tc='tar -cvzf'
-
+## ssh
+### wp server in 192.168.8.18
+alias sz='ssh -oPort=7002 zdwp@39.105.40.54'
+### wp server in 192.168.9.19
+alias sw='ssh -oPort=7001 wp@39.105.40.54'
+### droid aliyun server
+alias sd='ssh root@39.105.40.54'
 " >> ~/.zshrc
 
 # install indicator-sysmonitor
